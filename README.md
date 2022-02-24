@@ -13,3 +13,6 @@ In particolare, il sistema software verrà utilizzato dal personale del circolo 
 - Inviare le notifiche che informano i soci che devono rinnovare la quota di associazione e/o le quote di rimessaggio;
 - Mantenere la traccia dei pagamenti di associazione, rimessaggio e iscrizione alle gare.
 Tutti i pagamenti devono essere effettuati attraverso il servizio di pagamento offerto dal sistema di gestione del circolo che accetta carte di credito e ricevute di bonifico.
+
+NB: Nel file [DATABASE](https://github.com/michelecairone/Sailing_club/blob/main/DATABASE.sql) si trova il codice per creare la struttura del database e qualche dato per popolarlo.
+Nel file [Manuale_Sailing-Club](https://github.com/michelecairone/Sailing_club/blob/main/Manuale_Sailing-Club.pdf) si trova la descrizione per avviare l'applicazione e una guida delle funzioni presenti nell'intefaccia grafica lato client.
