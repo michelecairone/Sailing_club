@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"progettofinale.sailingclub","l":"progettofinale.sailingclub"},{"m":"progettofinale.sailingclub","l":"progettofinale.sailingclub.communication"},{"m":"progettofinale.sailingclub","l":"progettofinale.sailingclub.controller"}];updateSearchResults();

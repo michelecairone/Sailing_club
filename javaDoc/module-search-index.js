@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"progettofinale.sailingclub"}];updateSearchResults();
