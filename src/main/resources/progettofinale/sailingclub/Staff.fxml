@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="393.0" prefWidth="694.0" style="-fx-background-color: #23aea3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="progettofinale.sailingclub.controller.StaffController">
+	<children>
+		<Label layoutX="14.0" layoutY="9.0" prefHeight="62.0" prefWidth="162.0" text="Dashboard" textFill="WHITE">
+			<font>
+				<Font name="Couture-Bold" size="32.0" />
+			</font>
+		</Label>
+		<Label fx:id="usernameLabel" layoutX="181.0" layoutY="16.0" prefHeight="47.0" prefWidth="398.0" text="Staff">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Label>
+		<TabPane fx:id="adminTabPane" layoutY="81.0" prefHeight="350.0" prefWidth="693.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+            <Tab fx:id="deliveryTabA" text="Boats">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					  <children>
+		              <ComboBox fx:id="choiceMember" layoutX="513.0" layoutY="14.0" onAction="#handleChoiceMember" prefWidth="150.0" promptText="choice Member" visibleRowCount="9" />
+                        <TableView fx:id="boatTableS" layoutX="14.0" layoutY="11.0" prefHeight="300.0" prefWidth="482.0">
+                           <placeholder>
+                              <Label text="Boats not found!" />
+                           </placeholder>
+                           <columns>
+                              <TableColumn fx:id="boatId" prefWidth="143.99996662139893" text="ID">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="nameBoatM" prefWidth="172.0000762939453" text="Name">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="name" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="lengthBoatM" prefWidth="170.39996337890625" text="Length">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="length" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                           </columns>
+                        </TableView>
+                        <Button fx:id="RmvButton1" layoutX="539.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleRmvBoatM" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Remove" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addButton1" layoutX="539.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleAddBoatM" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #000060;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="boatName" layoutX="520.0" layoutY="60.0" prefHeight="26.0" prefWidth="138.0" promptText="Name" />
+                        <TextField fx:id="boatLength" layoutX="520.0" layoutY="93.0" prefHeight="26.0" prefWidth="138.0" promptText="Lenght" />
+                        <TextField fx:id="boatIdM" layoutX="519.0" layoutY="210.0" prefHeight="26.0" prefWidth="138.0" promptText="ID boat" />
+
+	</children>
+
+</AnchorPane>
+               </content>
+            </Tab>
+
+				<Tab fx:id="memberTab" closable="false" text="Members">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="438.0" style="-fx-background-color: white;">
+							<children>
+                        <TableView fx:id="tableMember" layoutX="14.0" layoutY="11.0" prefHeight="200.0" prefWidth="666.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                           <placeholder>
+                              <Label text="Members not found!" />
+                           </placeholder>
+                           <columns>
+                              <TableColumn fx:id="nameMember" prefWidth="69.60000324249268" text="Name">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="name" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="surnameMember" prefWidth="81.5999755859375" text="Surname">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="surname" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="addressMember" prefWidth="146.40003967285156" text="Address">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="address" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="cfMember11" prefWidth="170.4000244140625" text="CF">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="cf" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="usernameMember" prefWidth="95.20001220703125" text="Username">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="username" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="passMember" prefWidth="102.39996337890625" text="Password">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="password" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="newName" layoutX="15.0" layoutY="230.0" promptText="Name" />
+                        <TextField fx:id="newSurname" layoutX="178.0" layoutY="230.0" promptText="Surname" />
+                        <TextField fx:id="newAddress" layoutX="338.0" layoutY="230.0" promptText="Address" />
+                        <TextField fx:id="newCF" layoutX="15.0" layoutY="265.0" promptText="CF" />
+                        <TextField fx:id="newUsername" layoutX="178.0" layoutY="265.0" promptText="Username" />
+                        <TextField fx:id="newPassword" layoutX="338.0" layoutY="265.0" promptText="Password" />
+                        <Button fx:id="addMember" layoutX="580.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleAddMember" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #000060;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="rmvMember" layoutX="580.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleRmvMember" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Remove" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+            <Tab fx:id="raceTab" text="Race">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="694.0">
+                     <children>
+                        <TabPane layoutX="-3.0" prefHeight="400.0" prefWidth="698.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab fx:id="tabViewRace" closable="false" text="View Race">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="698.0">
+                                       <children>
+                                          <TableView fx:id="raceTable" layoutX="14.0" layoutY="13.0" prefHeight="270.0" prefWidth="480.0">
+                                             <placeholder>
+                                                <Label text="Race not found!" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="raceID" prefWidth="107.20003986358643" text="ID">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="id" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="raceName" minWidth="0.0" prefWidth="124.7999267578125" text="Name">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="name" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="raceDate" minWidth="0.0" prefWidth="107.20002746582031" text="Date">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="date" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="raceQuote" prefWidth="120.79998779296875" text="Quote">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="quote" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="rmvRace" layoutX="538.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleRmvRace" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Remove" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="addRace" layoutX="538.0" layoutY="123.0" mnemonicParsing="false" onAction="#handleAddRace" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #000060;" text="Add" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="raceID1" layoutX="520.0" layoutY="186.0" prefHeight="26.0" prefWidth="138.0" promptText="ID Race" />
+                                          <TextField fx:id="raceQuote1" layoutX="520.0" layoutY="87.0" prefHeight="26.0" prefWidth="138.0" promptText="Quote" />
+                                          <TextField fx:id="raceName1" layoutX="519.0" layoutY="15.0" prefHeight="26.0" prefWidth="138.0" promptText="Name" />
+                                          <DatePicker fx:id="raceDate1" layoutX="520.0" layoutY="51.0" prefHeight="26.0" prefWidth="138.0" promptText="Date" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="tabParticipants" closable="false" text="Participants List">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+                                       <children>
+                                          <TableView fx:id="tableS" layoutX="14.0" layoutY="49.0" prefHeight="240.0" prefWidth="675.0">
+                                             <placeholder>
+                                                <Label text="Participants not found!" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="nameMember2" prefWidth="136.80001544952393" text="Name">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="name" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="surnameMember2" prefWidth="168.8000030517578" text="Surname">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="surname" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="cfMember4" prefWidth="213.60003662109375" text="CF">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="cf" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="boatID2" prefWidth="149.5999755859375" text="ID Boat">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="idBoat" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <ComboBox fx:id="choiceRace" layoutX="276.0" layoutY="14.0" onAction="#handleChoiceRace" prefWidth="150.0" promptText="choice Race" visibleRowCount="9" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="paymentTab" text="Payments">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="694.0">
+                     <children>
+                        <TabPane layoutX="-3.0" prefHeight="400.0" prefWidth="698.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab fx:id="tabStorage" closable="false" text="Storage">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="698.0">
+                                       <children>
+                                          <TableView fx:id="tableStorage" layoutX="14.0" layoutY="13.0" prefHeight="270.0" prefWidth="480.0">
+                                             <placeholder>
+                                                <Label text="Not found!" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="cfMember1" minWidth="0.0" prefWidth="130.39993000030518" text="CF">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="cf" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="idBoat1" prefWidth="104.800048828125" text="ID Boat">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="idBoat" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="boatQuote" prefWidth="110.40003967285156" text="Quote">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="storageQuote" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="Date" minWidth="0.0" prefWidth="132.0" text="Date">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="storageDate" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="buttonNoticeS" layoutX="543.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleSendNoticeS" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Notice Pay" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="searchButton" layoutX="542.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleSearchStorage" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Search" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="sCF" layoutX="525.0" layoutY="202.0" prefHeight="26.0" prefWidth="138.0" promptText="CF " />
+                                          <TextField fx:id="idBoatS" layoutX="525.0" layoutY="55.0" prefHeight="26.0" prefWidth="138.0" promptText="ID boat " />
+                                          <TextField fx:id="cfMemberS" layoutX="525.0" layoutY="14.0" prefHeight="26.0" prefWidth="138.0" promptText="CF" />
+                                          <Button fx:id="buttonViewAll" contentDisplay="BOTTOM" layoutX="569.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleViewAllStorage" prefHeight="22.0" prefWidth="50.0" style="-fx-background-color: #000060;" text="View all" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab closable="false" text="Membership Fee">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="698.0">
+                                       <children>
+                                          <TableView fx:id="tableFee" layoutX="14.0" layoutY="13.0" prefHeight="270.0" prefWidth="470.0">
+                                             <placeholder>
+                                                <Label text="Not found!" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="cfMemberFee" minWidth="0.0" prefWidth="234.39999103546143" text="CF">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="cf" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="dateExpFee" minWidth="0.0" prefWidth="183.2000274658203" text="Date">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="feeDate" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="buttonNoticeM" layoutX="538.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleSendNoticeM" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #000060;" text="Notice Pay" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="updateButton" layoutX="540.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleUpdateFee" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #000060;" text="Update" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="memberCF" layoutX="518.0" layoutY="134.0" prefHeight="26.0" prefWidth="138.0" promptText="CF " />
+                                          <TextField fx:id="newPriceFee" layoutX="520.0" layoutY="45.0" prefHeight="26.0" prefWidth="138.0" promptText="new Fee" />
+                                          <Label layoutX="520.0" layoutY="14.0" text="FEE: ">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="priceFee" layoutX="550.0" layoutY="14.0" prefHeight="20.0" prefWidth="102.0" text="price">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="searchButton1" layoutX="540.0" layoutY="172.0" mnemonicParsing="false" onAction="#handleSearchMemberFee" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Search" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="mCF" layoutX="518.0" layoutY="222.0" prefHeight="26.0" prefWidth="138.0" promptText="CF " />
+                                          <Button fx:id="buttonViewAll1" contentDisplay="BOTTOM" layoutX="434.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleViewAllMemberFee" prefHeight="22.0" prefWidth="48.0" style="-fx-background-color: #23aea3;" text="View all" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="tabRaceInscription" closable="false" text="Inscription Race">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+                                       <children>
+                                          <TableView fx:id="tableRaceP" layoutX="14.0" layoutY="14.0" prefHeight="270.0" prefWidth="490.0">
+                                             <placeholder>
+                                                <Label text="Not found!" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="cfMemberRace" minWidth="0.0" prefWidth="161.60000324249268" text="CF">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="cf" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="idBoatRace" prefWidth="105.60005187988281" text="ID Boat">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="idBoat" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="idRace" prefWidth="81.5999755859375" text="ID Race">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="idRace" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="raceDate212" minWidth="0.0" prefWidth="139.19998779296873" text="Date">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="raceDate" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="searchButton2" layoutX="548.0" layoutY="189.0" mnemonicParsing="false" onAction="#handleSearchParticipation" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #23aea3;" text="Search" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="idBoatR" layoutX="529.0" layoutY="115.0" prefHeight="26.0" prefWidth="138.0" promptText="ID boat " />
+                                          <TextField fx:id="memberCfR" layoutX="529.0" layoutY="82.0" prefHeight="26.0" prefWidth="138.0" promptText="CF" />
+                                          <TextField fx:id="idRaceR" layoutX="529.0" layoutY="149.0" prefHeight="26.0" prefWidth="138.0" promptText="ID Race" />
+                                          <Button fx:id="buttonViewAll2" contentDisplay="BOTTOM" layoutX="573.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleViewAllInscription" prefHeight="22.0" prefWidth="50.0" style="-fx-background-color: #000060;" text="View all" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+			</tabs>
+		</TabPane>
+
+		<Hyperlink layoutX="619.0" layoutY="14.0" onAction="#handleHomeButton" text="Logout" textFill="WHITE">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Hyperlink>
+
+	</children>
+</AnchorPane>
